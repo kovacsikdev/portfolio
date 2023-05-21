@@ -1,30 +1,205 @@
-body {
+:root {
+  --width-large: 600px;
+  --font-extra-large: 24px;
+  --font-large: 20px;
+  --font-small: 16px;
+}
+
+html, body {
   margin: 0;
   padding: 0;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 2rem;
-  color: aliceblue;
+}
+
+body {
+  font-size: var(--font-large);
+  font-family: Helvetica, Georgia, Times, "Times New Roman", sans-serif;
+  color: white;
+  background-color: #0d0d0d;
+}
+
+h2 {
+  font-size: var(--font-extra-large)
+}
+
+section {
+  margin: 25px 0;
+}
+
+.section-experience {
+  display: flex;
+  margin: 50px 0;
+}
+
+.section-date {
+  min-width: 180px;
+  padding: 0 10px 10px 0;
 }
 
 .main {
-  width: 100%;
-  height: 100vh;
-  background-image: url("background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+  position: relative;
+  max-width: var(--width-large);
+  margin: 0 auto;
+  padding: 0 20px;
+  border-left: 2px solid #1a1a1a;
+  border-right: 2px solid #1a1a1a;
 }
 
-.main .title {
-  position: absolute;
-  top: 5%;
-  left: 5%;
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
 }
 
-.main .footer {
-  width: 100%;
-  font-size: 1rem;
-  position: absolute;
+.profile-pic {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  bottom: 10px;
+}
+
+a {
+  font-size: var(--font-small);
+  text-decoration: none;
+  color: #6666ff;
+}
+
+a:visited {
+  color: #b366ff;
+}
+
+.profile-pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  text-align: right;
+}
+
+.subtext {
+  font-size: var(--font-small);
+}
+
+.project-screenshot {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.project-screenshot img {
+  height: 600px;
+}
+
+.skills-btn {
+  cursor: pointer;
+}
+
+.skills-btn input {
+  display: none;
+}
+
+.skills-btn input:checked + .skills {
+  transition: top 1s;
+  transition-timing-function: ease-in-out;
+  top: 0;
+}
+
+.skills-btn input:checked + .skills .btn-arrow {
+  transition: transform 1s;
+  transition-timing-function: ease-in-out;
+  transform: rotate(-135deg);
+}
+
+.skills-btn input:checked + .skills + .skills-bg {
+  display: block;
+}
+
+.skills-btn-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  text-align: center;
+  border-top: 2px solid #1a1a1a;
+}
+
+.skills-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  /* left: 50%; */
+  width: calc(var(--width-large) + 40px);
+  height: 100vh;
+  margin-left: -20px;
+  background-color: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+}
+
+.skills {
+  transition: top 1s;
+  transition-timing-function: ease-in-out;
+  z-index: 100;
+  position: fixed;
+  top: -400px;
+  /* left: 50%; */
+  max-width: calc(var(--width-large) + 40px);
+  height: 450px;
+  margin-left: -20px;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #121212;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  display: inline-block;
+  padding: 0 4px;
+  font-size: var(--font-small);
+}
+
+.skills li::before {
+  content: "- ";
+}
+
+.btn-arrow {
+  transition: transform 1s;
+  transition-timing-function: ease-in-out;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-bottom: 3px;
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --width-large: 100%;
+    --font-large: 18px;
+  --font-small: 14px;
+  }
+
+  .profile-pic {
+    width: 100px;
+  }
+
+  .profile-pic img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .section-experience {
+    flex-direction: column;
+  }
 }
