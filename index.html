@@ -35,7 +35,12 @@
           Front End UI development as a React Developer. I enjoy building tools
           and apps. I am always learning new things and growing as a developer.
         </div>
+        <p>
+          Images below were custom generated in
+          <a href="https://leonardo.ai/" target="_blank">Leonardo.AI</a>
+        </p>
       </section>
+      <div class="main-bg-1 parallax"></div>
       <section>
         <h2>Experience</h2>
         <div class="section-experience">
@@ -46,6 +51,7 @@
               <a href="https://www.kitestring.com/" target="_blank"
                 >Kitestring</a
               >
+              <div class="subtext">Bentonville, Arkansas, USA</div>
             </div>
             <div class="subtext">
               <p>
@@ -78,6 +84,7 @@
               <a href="https://corporate.cartrawler.com/en-gb/" target="_blank"
                 >CarTrawler</a
               >
+              <div class="subtext">Dublin, Ireland</div>
             </div>
             <div class="subtext">
               <p>
@@ -101,11 +108,27 @@
           </div>
         </div>
         <div class="section-experience">
+          <div class="section-date subtext">May 2018 - May 2019</div>
+          <div>
+            <div><strong>Travel</strong></div>
+            <div>
+              <div class="subtext">Europe</div>
+            </div>
+            <div class="subtext">
+              <p>
+                Spent some time travelling Europe visiting Germany, France,
+                Denmark, United Kingdom and Ireland.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="section-experience">
           <div class="section-date subtext">Aug 2016 - May 2018</div>
           <div>
             <div><strong>Software Developer</strong></div>
             <div>
               <a href="https://www.bbva.com/en/" target="_blank">BBVA</a>
+              <div class="subtext">Dallas, Texas, USA</div>
             </div>
             <div class="subtext">
               <p>
@@ -118,14 +141,16 @@
           </div>
         </div>
       </section>
+      <div class="main-bg-2 parallax"></div>
       <section>
-        <h2>Projects</h2>
+        <h2>Side Projects</h2>
         <div class="projects">
           <strong>Tile Game</strong>
           <p class="subtext">
-            Android app game made in React Native. Mobile game is based on the old school tile game where you need to
-            rearrange tiled numbers to put them back in numerical order.
-            Download the game on Android and give it a try!
+            Android app game made in React Native. Mobile game is based on the
+            old school tile game where you need to rearrange tiled numbers to
+            put them back in numerical order. Download the game on Android and
+            give it a try!
           </p>
           <p>
             <a
@@ -137,13 +162,13 @@
           <div class="project-screenshot">
             <img src="assets/tile_game.png" alt="Android game screenshot" />
           </div>
-          <!-- <hr /> -->
+
           <strong>Conversions</strong>
           <p class="subtext">
-            A PWA unit conversions web app. Progressive Web App made in React to help convert common units of
-            measurement between the imperial and metric system. This came in
-            handy when I was living in Ireland and needed to convert from my
-            American units to metric and visa-versa.
+            A PWA unit conversions web app. Progressive Web App made in React to
+            help convert common units of measurement between the imperial and
+            metric system. This came in handy when I was living in Ireland and
+            needed to convert from my American units to metric and visa-versa.
           </p>
           <p class="subtext">
             When visiting the web app on your phone, you should get a
@@ -152,11 +177,14 @@
             Store. This even works offline.
           </p>
           <p>
-            <a href="https://conversions.kovacsikdev.com" target="_blank">https://conversions.kovacsikdev.com</a>
+            <a href="https://conversions.kovacsikdev.com" target="_blank"
+              >https://conversions.kovacsikdev.com</a
+            >
           </p>
         </div>
       </section>
-      <section>
+      <div class="main-bg-3 parallax"></div>
+      <section style="margin: 25px 0 100px 0">
         <h2>Socials</h2>
         <div>
           <a href="mailto:kovacsikdev@gmail.com">kovacsikdev@gmail.com</a>
@@ -172,9 +200,13 @@
           <a href="https://github.com/kovacsikdev/">Github</a>
         </div>
       </section>
-      <label class="skills-btn">
-        <input type="checkbox" />
-        <div class="skills">
+      <div class="skills">
+        <input type="checkbox" id="btn-input" />
+        <label class="btn-skills" for="btn-input">
+          Skills <i class="btn-arrow"></i>
+          <div class="skills-bg"></div>
+        </label>
+        <div class="skills-content">
           <div>
             Web Development
             <ul>
@@ -213,12 +245,19 @@
               <li>Agile methodology</li>
             </ul>
           </div>
-          <div class="skills-btn-title">
-            Skills <i class="btn-arrow"></i>
+          <div>
+            Soft Skills
+            <ul>
+              <li>Communicates with multiple teams</li>
+              <li>Writes detailed code reviews</li>
+              <li>Writes detailed pull requests</li>
+              <li>Easy to get along with</li>
+              <li>Eager to help and mentor</li>
+              <li>Always learning</li>
+            </ul>
           </div>
         </div>
-        <div class="skills-bg"></div>
-      </label>
+      </div>
     </div>
   </body>
 </html>
