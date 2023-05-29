@@ -3,7 +3,7 @@
   --font-extra-large: 24px;
   --font-large: 20px;
   --font-small: 16px;
-  --skills-modal-height: 450px;
+  --skills-modal-height: 500px;
   --skills-modal-transition-time: 0.5s;
   --bg-img-height: 300px;
 }
@@ -167,7 +167,6 @@ a:visited {
   box-sizing: border-box;
   height: var(--skills-modal-height);
   max-height: calc(100vh - 40px);
-  overflow-y: scroll;
   width: var(--width);
   top: calc(0px - var(--skills-modal-height));
   border: 2px solid white;
@@ -236,6 +235,10 @@ a:visited {
 
   .section-experience {
     flex-direction: column;
+  }
+
+  .skills-content {
+    overflow-y: scroll;
   }
 }
 
