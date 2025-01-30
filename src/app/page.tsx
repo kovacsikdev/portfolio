@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center my-10">
       <div className="text-center space-y-4">
         <h1 className="mb-4 text-4xl">Welcome</h1>
         <div>

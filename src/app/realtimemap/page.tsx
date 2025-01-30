@@ -16,7 +16,7 @@ import {
 import "./page.css";
 
 const RealTimeMap = () => {
-  const { vehicleData, socketError } = useVehicleData();
+  const { vehicleData, clientCount, socketError } = useVehicleData();
   const [selectedVehicleId, setSelectedVehicleId] = useState("");
   const [displayInfoBox, setDisplayInfoBox] = useState(false);
   const [infoBoxType, setInfoBoxType] = useState("");
@@ -35,9 +35,6 @@ const RealTimeMap = () => {
           Node.js.
         </div>
       </div>
-      {displayInfoBox && (
-        <InfoBox type={infoBoxType} hideInfoBox={() => setDisplayInfoBox(false)} />
-      )}
       <VehicleDataContext.Provider
         value={{
           vehicleData,
@@ -46,6 +43,9 @@ const RealTimeMap = () => {
       >
         <div className="map-wrapper">
           <div className="map-tile">
+            {displayInfoBox && (
+              <InfoBox type={infoBoxType} hideInfoBox={() => setDisplayInfoBox(false)} clientCount={clientCount} />
+            )}
             <SelectedVehicleDetails />
             <APIProvider
               apiKey={"AIzaSyBVtns2y9oxyCzhfoGJXztrI6t6KJ9MDkE"}

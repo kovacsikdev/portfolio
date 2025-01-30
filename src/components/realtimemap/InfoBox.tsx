@@ -6,13 +6,13 @@ import "./InfoBox.css";
 
 type InfoBoxProps = {
   type: string;
-  hideInfoBox: any;
+  hideInfoBox: () => void;
+  clientCount: number;
 };
 
 export const InfoBox = (props: InfoBoxProps) => {
-  const { type, hideInfoBox } = props;
-  const { clientCount } = useVehicleData();
-
+  const { type, hideInfoBox, clientCount } = props;
+  
   return (
     <>
       {type === "locations" && (
