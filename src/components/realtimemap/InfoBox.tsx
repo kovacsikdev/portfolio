@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useVehicleData } from "@/helpers/customHooks";
 import { Icon } from "./Icon";
 import CloseIcon from "../../assets/CloseIcon.svg";
 import "./InfoBox.css";
@@ -12,7 +11,7 @@ type InfoBoxProps = {
 
 export const InfoBox = (props: InfoBoxProps) => {
   const { type, hideInfoBox, clientCount } = props;
-  
+
   return (
     <>
       {type === "locations" && (
