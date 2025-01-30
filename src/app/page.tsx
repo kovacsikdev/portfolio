@@ -9,6 +9,7 @@ export default function Home() {
           <p>My name is Michael Kovacsik. This site is to showcase my Fullstack Web Development skills</p>
           <p>Please use the side menu to navigate between projects</p>
         </div>
+        <div>This website was built in Next.js, React, and TypeScript</div>
       </div>
     </div>
   );

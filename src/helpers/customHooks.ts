@@ -27,6 +27,7 @@ export const useVehicleData = () => {
     });
 
     socket.on("disconnect", (data: any) => {
+      socket.disconnect();
       console.log("disconnect", data);
     });
 
