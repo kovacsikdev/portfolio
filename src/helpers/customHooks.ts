@@ -22,6 +22,7 @@ export const useVehicleData = () => {
     );
 
     socket.on("connect", () => {
+      setSocketError(undefined);
       console.log("connected");
     });
 
@@ -76,5 +77,5 @@ export const useVehicleData = () => {
     };
   }, []);
 
-  return [vehicleData, clientCount, socketError]
+  return {vehicleData, clientCount, socketError}
 };

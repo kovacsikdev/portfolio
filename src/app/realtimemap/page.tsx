@@ -16,7 +16,7 @@ import {
 import "./page.css";
 
 const RealTimeMap = () => {
-  const [vehicleData, socketError] = useVehicleData();
+  const { vehicleData, socketError } = useVehicleData();
   const [selectedVehicleId, setSelectedVehicleId] = useState("");
   const [displayInfoBox, setDisplayInfoBox] = useState(false);
   const [infoBoxType, setInfoBoxType] = useState("");
