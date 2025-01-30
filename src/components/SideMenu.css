@@ -1,5 +1,6 @@
 .side-menu-wrapper {
   position: absolute;
+  top: 0;
 }
 .side-menu {
     position: fixed;

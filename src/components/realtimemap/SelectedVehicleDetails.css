@@ -11,7 +11,7 @@
 }
 
 .selected-vehicle-details-visible {
-  left: 0;
+  left: 0.5rem;
 }
 
 @media (max-width: 62.5rem) {
