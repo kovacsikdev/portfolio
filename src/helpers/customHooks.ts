@@ -22,7 +22,6 @@ export const useVehicleData = () => {
     );
 
     socket.on("connect", () => {
-      setSocketError(undefined);
       console.log("connected");
     });
 
