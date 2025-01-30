@@ -1,0 +1,22 @@
+.selected-vehicle-details {
+  position: absolute;
+  padding: 0.25rem;
+  bottom: 0.5rem;
+  width: 25%;
+  z-index: 100;
+  background-color: #161b1d;
+  border-top-right-radius: 0.5rem;
+  left: -100%;
+  transition: left 0.5s ease-in;
+}
+
+.selected-vehicle-details-visible {
+  left: 0;
+}
+
+@media (max-width: 62.5rem) {
+  .selected-vehicle-details {
+    width: auto;
+    height: 50%;
+  }
+}
