@@ -11,7 +11,7 @@ type InfoBoxProps = {
 
 export const InfoBox = (props: InfoBoxProps) => {
   const { type, hideInfoBox } = props;
-  const [_, clientCount] = useVehicleData();
+  const [clientCount] = useVehicleData();
 
   return (
     <>

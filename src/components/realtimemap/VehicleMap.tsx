@@ -5,7 +5,6 @@ import { Map, useMap } from "@vis.gl/react-google-maps";
 import { VehicleDataType } from "@/helpers/types";
 import { VehicleDataContext } from "@/helpers/context";
 import { VehicleMarker } from "./VehicleMarker";
-import { SelectedVehicleDetails } from "./SelectedVehicleDetails";
 import "./VehicleMap.css";
 
 type VehicleMapProps = {
