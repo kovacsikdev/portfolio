@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Icon } from "./Icon";
-import CloseIcon from "../../assets/CloseIcon.svg";
+import CloseIcon from "../../assets/close-icon.svg";
 import "./InfoBox.css";
 
 type InfoBoxProps = {

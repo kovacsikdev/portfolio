@@ -11,8 +11,9 @@ import {
   VehicleMap,
   SelectedVehicleDetails,
   VehicleVideo,
-  InfoBox
+  InfoBox,
 } from "@/components/realtimemap";
+import { DevInfo } from "@/components";
 import "./page.css";
 
 const RealTimeMap = () => {
@@ -20,20 +21,42 @@ const RealTimeMap = () => {
   const [selectedVehicleId, setSelectedVehicleId] = useState("");
   const [displayInfoBox, setDisplayInfoBox] = useState(false);
   const [infoBoxType, setInfoBoxType] = useState("");
+  const [displayDevNote, setDisplayDevNote] = useState(false);
 
   return (
     <>
       {socketError && (
         <div className="socket-error">
-          There was an error connecting to the server. Please refresh to try again
+          There was an error connecting to the server. Please refresh to try
+          again
         </div>
       )}
       <div className="page-title">
-        <h2>Real Time Map</h2>
-        <div className="page-title-subtext">
-          Built in React and Typescript. Backend server and bots built in
-          Node.js.
-        </div>
+        <h2>
+          Real Time Map
+          <button
+            onClick={() => {
+              setDisplayDevNote(true);
+            }}
+          >
+            <Image
+              style={{ margin: "0 0.5rem" }}
+              src={InfoIcon}
+              alt="information icon"
+            />
+          </button>
+          {displayDevNote && (
+            <DevInfo
+              toggle={() => {
+                setDisplayDevNote(false);
+              }}
+            >
+              Real Time Map built in React and Typescript. Backend server and
+              bots built in Node.js. Network communication between bots, server
+              and client through Websockets
+            </DevInfo>
+          )}
+        </h2>
       </div>
       <VehicleDataContext.Provider
         value={{
@@ -44,7 +67,11 @@ const RealTimeMap = () => {
         <div className="map-wrapper">
           <div className="map-tile">
             {displayInfoBox && (
-              <InfoBox type={infoBoxType} hideInfoBox={() => setDisplayInfoBox(false)} clientCount={clientCount} />
+              <InfoBox
+                type={infoBoxType}
+                hideInfoBox={() => setDisplayInfoBox(false)}
+                clientCount={clientCount}
+              />
             )}
             <SelectedVehicleDetails />
             <APIProvider
@@ -53,10 +80,13 @@ const RealTimeMap = () => {
             >
               <div className="map-tile-header">
                 Live vehicle locations
-                <button id="btn-info-box-locations" onClick={() => {
-                  setInfoBoxType("locations");
-                  setDisplayInfoBox(true);
-                }}>
+                <button
+                  id="btn-info-box-locations"
+                  onClick={() => {
+                    setInfoBoxType("locations");
+                    setDisplayInfoBox(true);
+                  }}
+                >
                   <Image src={InfoIcon} alt="information icon" />
                 </button>
               </div>
@@ -66,10 +96,13 @@ const RealTimeMap = () => {
           <div className="selected-vehicle-video selected-vehicle-tile map-tile">
             <div className="map-tile-header">
               Vehicle cam video feed
-              <button id="btn-info-box-video" onClick={() => {
+              <button
+                id="btn-info-box-video"
+                onClick={() => {
                   setInfoBoxType("video");
                   setDisplayInfoBox(true);
-                }}>
+                }}
+              >
                 <Image src={InfoIcon} alt="information icon" />
               </button>
             </div>

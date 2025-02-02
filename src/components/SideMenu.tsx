@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import HamburgerIcon from "../assets/HamburgerIcon.svg";
-import CloseIcon from "../assets/CloseIcon.svg";
+import HamburgerIcon from "../assets/hamburger-menu-icon.svg";
+import CloseIcon from "../assets/close-icon.svg";
 import ResumeIcon from "../assets/resume-icon.svg";
 import EmailIcon from "../assets/email-icon.svg";
 
@@ -44,7 +44,7 @@ export const SideMenu: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href="/realtimemap" className="menu-link" onClick={toggleMenu} shallow={true}>
+              <Link href="/realtimemap" className="menu-link" onClick={toggleMenu}>
                 Real Time Map
               </Link>
             </li>
@@ -55,8 +55,8 @@ export const SideMenu: React.FC = () => {
             </li>
           </ul>
           <ul>
-            <li><a  className="link-socials" href="/Resume-Michael-Kovacsik.pdf" download={true}>Resume <Image src={ResumeIcon} alt="Resume Icon" /></a></li>
-            <li><Link  className="link-socials" href="mailto:kovacsikdev@gmail.com">kovacsikdev@gmail.com <Image src={EmailIcon} alt="Email Icon" /></Link></li>
+            <li><a  className="link-socials" href="/portfolio/Resume-Michael-Kovacsik.pdf" download={true}>Resume <Image src={ResumeIcon} alt="Resume Icon" /></a></li>
+            <li><Link className="link-socials" href="mailto:kovacsikdev@gmail.com">kovacsikdev@gmail.com <Image src={EmailIcon} alt="Email Icon" /></Link></li>
           </ul>
         </div>
       </div>
