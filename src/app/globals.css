@@ -20,6 +20,9 @@ body {
 .page-title {
   text-align: center;
   padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .page-title h2 {

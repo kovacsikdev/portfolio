@@ -31,10 +31,11 @@ const RealTimeMap = () => {
           again
         </div>
       )}
-      <div className="page-title">
+      <div className="page-title text-4xl">
         <h2>
           Real Time Map
-          <button
+        </h2>
+        <button
             onClick={() => {
               setDisplayDevNote(true);
             }}
@@ -56,7 +57,6 @@ const RealTimeMap = () => {
               and client through Websockets
             </DevInfo>
           )}
-        </h2>
       </div>
       <VehicleDataContext.Provider
         value={{
