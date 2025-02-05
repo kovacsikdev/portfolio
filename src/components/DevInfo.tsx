@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, ReactNode } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import InfoIcon from "../assets/info-icon.svg";
 import "./DevInfo.css";
