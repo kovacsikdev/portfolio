@@ -21,7 +21,12 @@ const RealTimeMap = () => {
   const [selectedVehicleId, setSelectedVehicleId] = useState("");
   const [displayInfoBox, setDisplayInfoBox] = useState(false);
   const [infoBoxType, setInfoBoxType] = useState("");
-  const [displayDevNote, setDisplayDevNote] = useState(false);
+
+  const env = process.env.NODE_ENV;
+  const apiKey =
+    env === "production"
+      ? process.env.NEXT_PUBLIC_MAP_API_KEY_PROD
+      : process.env.NEXT_PUBLIC_MAP_API_KEY_DEV;
 
   return (
     <>
@@ -32,31 +37,12 @@ const RealTimeMap = () => {
         </div>
       )}
       <div className="page-title text-4xl">
-        <h2>
-          Real Time Map
-        </h2>
-        <button
-            onClick={() => {
-              setDisplayDevNote(true);
-            }}
-          >
-            <Image
-              style={{ margin: "0 0.5rem" }}
-              src={InfoIcon}
-              alt="information icon"
-            />
-          </button>
-          {displayDevNote && (
-            <DevInfo
-              toggle={() => {
-                setDisplayDevNote(false);
-              }}
-            >
-              Real Time Map built in React and Typescript. Backend server and
-              bots built in Node.js. Network communication between bots, server
-              and client through Websockets
-            </DevInfo>
-          )}
+        <h2>Real Time Map</h2>
+        <DevInfo>
+          Real Time Map built in React and Typescript. Backend server and bots
+          built in Node.js. Network communication between bots, server and
+          client through Websockets
+        </DevInfo>
       </div>
       <VehicleDataContext.Provider
         value={{
@@ -74,10 +60,7 @@ const RealTimeMap = () => {
               />
             )}
             <SelectedVehicleDetails />
-            <APIProvider
-              apiKey={"AIzaSyBVtns2y9oxyCzhfoGJXztrI6t6KJ9MDkE"}
-              libraries={["marker"]}
-            >
+            <APIProvider apiKey={apiKey || ""} libraries={["marker"]}>
               <div className="map-tile-header">
                 Live vehicle locations
                 <button

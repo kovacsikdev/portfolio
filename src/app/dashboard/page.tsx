@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import InfoIcon from "../../assets/info-icon.svg";
+import React from "react";
 
 import {
   Chart as ChartJS,
@@ -41,33 +39,11 @@ ChartJS.register(
 ChartJS.defaults.color = "#fff";
 
 const Dashboard: React.FC = () => {
-  const [displayDevNote, setDisplayDevNote] = useState(false);
   return (
     <>
       <div className="page-title text-4xl">
-        <h2>
-          Dashboards
-        </h2>
-        <button
-            onClick={() => {
-              setDisplayDevNote(true);
-            }}
-          >
-            <Image
-              style={{ margin: "0 0.5rem" }}
-              src={InfoIcon}
-              alt="information icon"
-            />
-          </button>
-          {displayDevNote && (
-            <DevInfo
-              toggle={() => {
-                setDisplayDevNote(false);
-              }}
-            >
-              Dashboard built using React, TypeScript, Chart.js
-            </DevInfo>
-          )}
+        <h2>Dashboards</h2>
+        <DevInfo>Dashboard built using React, TypeScript, Chart.js</DevInfo>
       </div>
       <div className="dashboard grid grid-cols-2 gap-4 grid-rows-6 md:grid-rows-2">
         <div className="dashboard-items h-[480px] col-span-2 flex justify-center items-center border border-gray-800 rounded-lg p-3">

@@ -1,39 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { DevInfo } from "@/components";
-import InfoIcon from "../assets/info-icon.svg";
 
 export default function Home() {
-  const [displayDevNote, setDisplayDevNote] = useState(false);
 
   return (
     <div className="flex items-center justify-center">
       <div className="text-center space-y-4">
         <div className="page-title text-4xl">
           <h1>Welcome</h1>
-          <button
-            onClick={() => {
-              setDisplayDevNote(true);
-            }}
-          >
-            <Image
-              style={{ margin: "0 0.5rem" }}
-              src={InfoIcon}
-              alt="information icon"
-            />
-          </button>
-          {displayDevNote && (
-            <DevInfo
-              toggle={() => {
-                setDisplayDevNote(false);
-              }}
-            >
-              Website built using Next.js, React, TypeScript
-            </DevInfo>
-          )}
+          <DevInfo>
+            Website built using Next.js, React, TypeScript
+          </DevInfo>
         </div>
         <div>
           My name is Michael Kovacsik. This site is to showcase my Fullstack Web

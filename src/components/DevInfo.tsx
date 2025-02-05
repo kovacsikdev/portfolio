@@ -1,28 +1,52 @@
 "use client";
 
 import React, { useEffect, useState, ReactNode } from "react";
+import Image from "next/image";
+import InfoIcon from "../assets/info-icon.svg";
 import "./DevInfo.css";
 
 type DevInfoProps = {
-  toggle: () => void;
-  children: ReactNode;
+  children: any;
 };
 
 const DevInfo = (props: DevInfoProps) => {
-  const { toggle, children } = props;
+  const { children } = props;
   const [slideIn, setSlideIn] = useState(false);
+  const [displayDevNote, setDisplayDevNote] = useState(false);
 
   useEffect(() => {
-    setSlideIn(true);
-  }, []);
+    if (displayDevNote) {
+      setSlideIn(true);
+    }
+  }, [displayDevNote]);
 
   return (
-    <div className="dev-info" onClick={() => toggle()}>
-      <div className={`dev-info-content ${slideIn ? "slide-in" : ""}`}>
-        <div>Dev notes:</div>
-        {children}
-      </div>
-    </div>
+    <>
+      <button
+        onClick={() => {
+          setDisplayDevNote(true);
+        }}
+      >
+        <Image
+          style={{ margin: "0 0.5rem" }}
+          src={InfoIcon}
+          alt="information icon"
+        />
+      </button>
+      {displayDevNote && (
+        <div
+          className="dev-info"
+          onClick={() => {
+            setDisplayDevNote(false);
+          }}
+        >
+          <div className={`dev-info-content ${slideIn ? "slide-in" : ""}`}>
+            <div>Dev notes:</div>
+            {children}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
