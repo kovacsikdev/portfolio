@@ -48,9 +48,14 @@ export const SideMenu: React.FC = () => {
                 Real Time Map
               </Link>
             </li>
+            <li>
+              <Link href="/videos" className="menu-link" onClick={toggleMenu}>
+                Videos
+              </Link>
+            </li>
             {/* <li>
-              <Link href="/miniprojects" className="menu-link" onClick={toggleMenu}>
-                Mini Projects
+              <Link href="/weather" className="menu-link" onClick={toggleMenu}>
+                Weather
               </Link>
             </li> */}
           </ul>
