@@ -39,9 +39,9 @@ const RealTimeMap = () => {
       <div className="page-title text-4xl">
         <h2>Real Time Map</h2>
         <DevInfo>
-          Real Time Map built in React and Typescript. Backend server and bots
-          built in Node.js. Network communication between bots, server and
-          client through Websockets
+          <div>Real Time Map built in React and Typescript.</div>
+          <div>Backend server and bots built in Node.js.</div>
+          <div>Network communication between bots, server and client through Websockets</div>
         </DevInfo>
       </div>
       <VehicleDataContext.Provider

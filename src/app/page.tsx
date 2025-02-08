@@ -27,21 +27,27 @@ export default function Home() {
         <div className="flex justify-evenly">
           <Link
             href="/dashboard"
-            className="border border-white rounded-lg p-2"
+            className="border border-white rounded-lg p-2 w-20 h-20"
           >
             <img src="/portfolio/dashboard_pic.png" alt="Dashboard icon" />
           </Link>
           <Link
             href="/realtimemap"
-            className="border border-white rounded-lg p-2"
+            className="border border-white rounded-lg p-2 w-20 h-20"
           >
             <img src="/portfolio/map.png" alt="Map icon" />
           </Link>
-          {/* <Link
-            href="/miniprojects"
-            className="border border-white rounded-lg p-2"
+          <Link
+            href="/videos"
+            className="border border-white rounded-lg p-2 w-20 h-20"
           >
-            <img src="/portfolio/product.png" alt="Projects icon" />
+            <img src="/portfolio/videos.png" alt="Videos icon" />
+          </Link>
+          {/* <Link
+            href="/weather"
+            className="border border-white rounded-lg p-2 w-20 h-20"
+          >
+            <img src="/portfolio/weather.png" alt="Weather icon" />
           </Link> */}
         </div>
       </div>
