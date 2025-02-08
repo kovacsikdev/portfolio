@@ -52,45 +52,45 @@ const Table: React.FC = () => {
         value={filter}
         onChange={handleFilterChange}
         placeholder="Filter message"
-        className="block w-full mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
+        className="block w-full mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-gray-700 text-white border-gray-600 focus:ring-indigo-500 focus:border-indigo-500"
       />
-      <div className="overflow-y-auto border border-gray-300 rounded-lg w-full h-full dark:border-gray-600 mt-2">
-        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 sticky top-0 dark:bg-gray-800">
+      <div className="overflow-y-auto border border-gray-300 rounded-lg w-full h-full border-gray-600 mt-2">
+        <table className="min-w-full divide-y divide-gray-200 divide-gray-700">
+          <thead className="bg-gray-50 sticky top-0 bg-gray-800">
             <tr>
               <th
-                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer dark:text-gray-300"
+                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer text-gray-300"
                 onClick={() => sortData('id')}
               >
                 ID {getSortIcon('id')}
               </th>
               <th
-                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer dark:text-gray-300"
+                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer text-gray-300"
                 onClick={() => sortData('userId')}
               >
                 User ID {getSortIcon('userId')}
               </th>
               <th
-                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer dark:text-gray-300"
+                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer text-gray-300"
                 onClick={() => sortData('message')}
               >
                 Message {getSortIcon('message')}
               </th>
               <th
-                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer dark:text-gray-300"
+                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer text-gray-300"
                 onClick={() => sortData('completed')}
               >
                 Completed {getSortIcon('completed')}
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-900 dark:divide-gray-700">
+          <tbody className="bg-white divide-y divide-gray-200 bg-gray-900 divide-gray-700">
             {filteredData.map((user) => (
-              <tr key={user.id} className="hover:bg-gray-100 dark:hover:bg-gray-800">
-                <td className="p-4 py-4800 text-sm text-gray-500 dark:text-gray-300">{user.id}</td>
-                <td className="p-4 py-4800 text-sm text-gray-500 dark:text-gray-300">{user.userId}</td>
-                <td className="p-4 py-4800 text-sm text-gray-500 dark:text-gray-300">{user.message}</td>
-                <td className="p-4 py-4800 text-sm text-gray-500 dark:text-gray-300">{user.completed.toString()}</td>
+              <tr key={user.id} className="hover:bg-gray-100 hover:bg-gray-800">
+                <td className="p-4 py-4800 text-sm text-gray-500 text-gray-300">{user.id}</td>
+                <td className="p-4 py-4800 text-sm text-gray-500 text-gray-300">{user.userId}</td>
+                <td className="p-4 py-4800 text-sm text-gray-500 text-gray-300">{user.message}</td>
+                <td className="p-4 py-4800 text-sm text-gray-500 text-gray-300">{user.completed.toString()}</td>
               </tr>
             ))}
           </tbody>
