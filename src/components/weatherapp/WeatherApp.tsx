@@ -15,7 +15,7 @@ import {
   Title,
   Tooltip,
 } from "chart.js";
-import { DevInfo } from "@/components";
+// import { DevInfo } from "@/components";
 
 ChartJS.register(
   CategoryScale,
@@ -28,7 +28,7 @@ ChartJS.register(
   Legend,
   Tooltip
 );
-import { testForecast, testHourly, testError404 } from "./testData";
+import { testForecast, testHourly } from "./testData";
 import "./WeatherApp.css"
 
 const WeatherApp = () => {
