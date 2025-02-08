@@ -59,38 +59,38 @@ const Table: React.FC = () => {
           <thead className="bg-gray-50 sticky top-0 bg-gray-800">
             <tr>
               <th
-                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer text-gray-300"
+                className="p-4 whitespace-nowrap text-left text-xs font-medium uppercase tracking-wider cursor-pointer text-gray-300"
                 onClick={() => sortData('id')}
               >
                 ID {getSortIcon('id')}
               </th>
               <th
-                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer text-gray-300"
+                className="p-4 whitespace-nowrap text-left text-xs font-medium uppercase tracking-wider cursor-pointer text-gray-300"
                 onClick={() => sortData('userId')}
               >
                 User ID {getSortIcon('userId')}
               </th>
               <th
-                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer text-gray-300"
+                className="p-4 whitespace-nowrap text-left text-xs font-medium uppercase tracking-wider cursor-pointer text-gray-300"
                 onClick={() => sortData('message')}
               >
                 Message {getSortIcon('message')}
               </th>
               <th
-                className="p-4 whitespace-nowrap text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer text-gray-300"
+                className="p-4 whitespace-nowrap text-left text-xs font-medium uppercase tracking-wider cursor-pointer text-gray-300"
                 onClick={() => sortData('completed')}
               >
                 Completed {getSortIcon('completed')}
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200 bg-gray-900 divide-gray-700">
+          <tbody className="text-white divide-y divide-gray-200 bg-gray-900 divide-gray-700">
             {filteredData.map((user) => (
               <tr key={user.id} className="hover:bg-gray-100 hover:bg-gray-800">
-                <td className="p-4 py-4800 text-sm text-gray-500 text-gray-300">{user.id}</td>
-                <td className="p-4 py-4800 text-sm text-gray-500 text-gray-300">{user.userId}</td>
-                <td className="p-4 py-4800 text-sm text-gray-500 text-gray-300">{user.message}</td>
-                <td className="p-4 py-4800 text-sm text-gray-500 text-gray-300">{user.completed.toString()}</td>
+                <td className="p-4 py-4800 text-sm">{user.id}</td>
+                <td className="p-4 py-4800 text-sm">{user.userId}</td>
+                <td className="p-4 py-4800 text-sm">{user.message}</td>
+                <td className="p-4 py-4800 text-sm">{user.completed.toString()}</td>
               </tr>
             ))}
           </tbody>
