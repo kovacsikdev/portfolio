@@ -147,55 +147,63 @@ const DashboardWrapper: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className="grid grid-cols-6 grid-rows-2 gap-4 mb-4">
-        <div className="col-span-6 row-span-1 md:col-span-3 row-span-2 lg:col-span-2">
-          <div className="flex flex-col items-center w-full max-w-[600]">
-            <div className="w-full">
-              <h2 className="font-semibold mb-2">Select a warehouse</h2>
-              <WarehouseLayout
-                setWarehouseBlockSelected={setWarehouseBlockSelected}
+      {filteredData.length > 0 ? (
+        <>
+          <div className="grid grid-cols-6 grid-rows-2 gap-4 mb-4">
+            <div className="col-span-6 row-span-1 md:col-span-3 row-span-2 lg:col-span-2">
+              <div className="flex flex-col items-center w-full max-w-[600]">
+                <div className="w-full">
+                  <h2 className="font-semibold mb-2">Select a warehouse</h2>
+                  <WarehouseLayout
+                    setWarehouseBlockSelected={setWarehouseBlockSelected}
+                  />
+                </div>
+                <div className="w-full">
+                  <h2 className="font-semibold mb-2">Filter</h2>
+                  <WarehouseFilter
+                    setImportanceFilter={setImportanceFilter}
+                    setReachedFilter={setReachedFilter}
+                    setShipmentFilter={setShipmentFilter}
+                    importanceFilter={importanceFilter}
+                    reachedFilter={reachedFilter}
+                    shipmentFilter={shipmentFilter}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-span-6 row-span-1 md:col-span-3 row-span-2 lg:col-span-4 h-[500]">
+              <div className="flex w-full h-[45%]">
+                <WarehouseCostChart stats={statCostPerShipment} />
+                <WarehouseTotalsChart stats={statTotalPerShipment} />
+              </div>
+              <div className="w-full h-[45%]">
+                <h2 className="font-semibold m-2">Product reached on time</h2>
+                <WarehouseReachedChart stats={statReachedPerShipment} />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-between items-center">
+            <div className="flex justify-evenly w-full">
+              <WarehouseTotalCount
+                title="Customer care calls"
+                total={careCallsTotal}
+              />
+              <WarehouseTotalCount title="Cost" total={costTotal} dollarSign />
+              <WarehouseTotalCount
+                title="Prior purchases"
+                total={priorPurchasesTotal}
               />
             </div>
-            <div className="w-full">
-              <h2 className="font-semibold mb-2">Filter</h2>
-              <WarehouseFilter
-                setImportanceFilter={setImportanceFilter}
-                setReachedFilter={setReachedFilter}
-                setShipmentFilter={setShipmentFilter}
-                importanceFilter={importanceFilter}
-                reachedFilter={reachedFilter}
-                shipmentFilter={shipmentFilter}
-              />
-            </div>
           </div>
-        </div>
-        <div className="col-span-6 row-span-1 md:col-span-3 row-span-2 lg:col-span-4 h-[500]">
-          <div className="flex w-full h-[45%]">
-            <WarehouseCostChart stats={statCostPerShipment} />
-            <WarehouseTotalsChart stats={statTotalPerShipment} />
+          <div>
+            {filteredData.length > 0 && (
+              <WarehouseTable tableData={filteredData} />
+            )}
           </div>
-          <div className="w-full h-[45%]">
-            <h2 className="font-semibold m-2">Product reached on time</h2>
-            <WarehouseReachedChart stats={statReachedPerShipment} />
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-between items-center">
-        <div className="flex justify-evenly w-full">
-          <WarehouseTotalCount
-            title="Customer care calls"
-            total={careCallsTotal}
-          />
-          <WarehouseTotalCount title="Cost" total={costTotal} dollarSign />
-          <WarehouseTotalCount
-            title="Prior purchases"
-            total={priorPurchasesTotal}
-          />
-        </div>
-      </div>
-      <div>
-        {filteredData.length > 0 && <WarehouseTable tableData={filteredData} />}
-      </div>
+        </>
+      ) : (
+        <div className="w-full text-center mt-10">loading data...</div>
+      )}
     </div>
   );
 };
