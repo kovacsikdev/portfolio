@@ -38,7 +38,7 @@ const Dashboard: React.FC = () => {
       <div className="page-title text-4xl">
         <h2>Dashboards</h2>
         <DevInfo>
-          https://github.com/kovacsikdev/portfolio/blob/main/src/app/dashboard/page.tsx
+          https://github.com/kovacsikdev/portfolio/blob/main/src/components/dashboard/DashboardWrapper.tsx
         </DevInfo>
       </div>
       <DashboardWrapper />

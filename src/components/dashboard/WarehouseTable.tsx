@@ -64,7 +64,7 @@ const WarehouseTable = (props: WarehouseTableProps) => {
       <div className="flex justify-between">
         <div>Items: {tableData.length}</div>
       </div>
-      <div className="overflow-y-auto border border-gray-300 rounded-lg w-full h-[500] border-gray-600 mt-2">
+      <div style={{height: "500px"}} className="overflow-y-auto border border-gray-300 rounded-lg w-full border-gray-600 mt-2">
         <table className="min-w-full divide-y divide-gray-200 divide-gray-700">
           <thead className="bg-gray-50 sticky top-0 bg-gray-800">
             <tr>
