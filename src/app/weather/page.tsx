@@ -10,7 +10,7 @@ const Weather = () => {
     <>
       <div className="page-title text-4xl">
         <h2>Weather</h2>
-        <DevInfo>Weather stuff</DevInfo>
+        <DevInfo>https://github.com/kovacsikdev/portfolio/blob/main/src/app/weather/page.tsx</DevInfo>
       </div>
       <div className="max-w-4xl m-auto my-6 p-2 border border-gray-300 rounded-md">
         <WeatherApp />

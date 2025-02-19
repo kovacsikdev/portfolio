@@ -5,12 +5,12 @@ import Image from "next/image";
 import CloseIcon from "../../assets/close-icon.svg";
 import "./Tile.css";
 
-type DevInfoProps = {
+type TileProps = {
   thumbnail: any;
   children?: ReactNode;
 };
 
-const Tile = (props: DevInfoProps) => {
+const Tile = (props: TileProps) => {
   const { thumbnail, children } = props;
   const tileRef = useRef<HTMLDivElement>(null);
   const [displayItem, setDisplayItem] = useState(false);

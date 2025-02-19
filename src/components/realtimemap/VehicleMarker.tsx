@@ -4,7 +4,7 @@ import {
   AdvancedMarker,
   useAdvancedMarkerRef,
 } from "@vis.gl/react-google-maps";
-import { determineOverallHealth } from "@/helpers/helpers";
+import { determineHealth } from "@/helpers/helpers";
 import { Icon } from "./Icon";
 
 type coords = {
@@ -40,7 +40,7 @@ export const VehicleMarker = (props: VehicleMarkerProps) => {
       >
         <div className="vehicle-icon">
           {children}
-          <Icon type={vehicleType || "truck"} fill={determineOverallHealth(health.overall)} />
+          <Icon type={vehicleType || "truck"} fill={determineHealth(health.overall)} />
         </div>
       </AdvancedMarker>
     </div>

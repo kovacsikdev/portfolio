@@ -4,19 +4,23 @@ export const colors = {
   WARNING: "#ff9933",
 };
 
+export const colorsPortfolio = {
+  c_1: "#0d1a26",
+  c_2: "#250A07",
+  c_3: "#633F3B",
+  c_4: "#5C3333",
+  c_5: "#405157",
+  c_6: "#DB525E",
+  c_7: "#F17D52",
+  c_8: "#5B9DB9",
+  c_9: "#2E6167",
+  c_10: "#35a834",
+  gray_1: "#f2f2f2",
+  gray_2: "#242424",
+  gray_3: "#31312F",
+}
+
 export const determineHealth = (health: string) => {
-  if (health === "alert") return colors.ALERT;
-  if (health === "warning") return colors.WARNING;
-  return colors.NORMAL;
-};
-
-export const determineOverallHealth = (health: string) => {
-  if (health === "alert") return colors.ALERT;
-  if (health === "warning") return colors.WARNING;
-  return colors.NORMAL;
-};
-
-export const determineEngineHealth = (health: string) => {
   if (health === "alert") return colors.ALERT;
   if (health === "warning") return colors.WARNING;
   return colors.NORMAL;
@@ -76,4 +80,8 @@ export const realTimeVideoMap = (id: string) => {
     case "120":
       return { driving: "3", stopped: "1" };
   }
+};
+
+export const convertNumToCommas = (num: number) => {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };

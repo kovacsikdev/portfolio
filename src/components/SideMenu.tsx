@@ -53,11 +53,6 @@ export const SideMenu: React.FC = () => {
                 Videos
               </Link>
             </li>
-            {/* <li>
-              <Link href="/weather" className="menu-link" onClick={toggleMenu}>
-                Weather
-              </Link>
-            </li> */}
           </ul>
           <ul>
             <li><a  className="link-socials" href="/portfolio/Resume-Michael-Kovacsik.pdf" download={true}>Resume <Image src={ResumeIcon} alt="Resume Icon" /></a></li>

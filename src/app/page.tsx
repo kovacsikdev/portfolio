@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { DevInfo } from "@/components";
+import Image from "next/image";
+import NewTabIcon from "../assets/new-tab.svg";
 
 export default function Home() {
 
@@ -10,9 +11,6 @@ export default function Home() {
       <div className="text-center space-y-4">
         <div className="page-title text-4xl">
           <h1>Welcome</h1>
-          <DevInfo>
-            Website built using Next.js, React, TypeScript
-          </DevInfo>
         </div>
         <div>
           My name is Michael Kovacsik. This site is to showcase my Fullstack Web
@@ -43,12 +41,9 @@ export default function Home() {
           >
             <img src="/portfolio/videos.png" alt="Videos icon" />
           </Link>
-          {/* <Link
-            href="/weather"
-            className="border border-white rounded-lg p-2 w-20 h-20"
-          >
-            <img src="/portfolio/weather.png" alt="Weather icon" />
-          </Link> */}
+        </div>
+        <div>
+          <a href="https://github.com/kovacsikdev/portfolio" target="_blank">Github <Image src={NewTabIcon} alt="new window" /></a>
         </div>
       </div>
     </div>

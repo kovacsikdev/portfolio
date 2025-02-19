@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { VehicleDataContext } from "@/helpers/context";
 import { VehicleDataType } from "@/helpers/types";
-import { determineEngineHealth, determineTireHealth } from "@/helpers/helpers";
+import { determineHealth, determineTireHealth } from "@/helpers/helpers";
 import "./SelectedVehicleDetails.css";
 
 export const SelectedVehicleDetails = () => {
@@ -285,7 +285,7 @@ export const SelectedVehicleDetails = () => {
             stroke="#000"
             fill={
               selectedVehicleData?.health
-                ? determineEngineHealth(selectedVehicleData?.health?.engine)
+                ? determineHealth(selectedVehicleData?.health?.engine)
                 : "none"
             }
           />
