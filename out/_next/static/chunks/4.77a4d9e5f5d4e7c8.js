@@ -1,0 +1,1 @@
+self.onmessage=a=>{let e=a.data.data,s=a.data.key,t=a.data.direction,d=[...e].sort((a,e)=>a[s]<e[s]?"ascending"===t?-1:1:a[s]>e[s]?"ascending"===t?1:-1:0);self.postMessage(d)},_N_E={};
