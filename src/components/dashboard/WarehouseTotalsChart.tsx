@@ -2,9 +2,10 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { StatPerShipmentType } from "./types";
 import { colorsPortfolio } from "@/helpers/helpers";
+import { convertNumToCommas } from "@/helpers/helpers";
 
 type WarehouseTotalsChartProps = {
-  stats: StatPerShipmentType
+  stats: StatPerShipmentType;
 };
 
 const WarehouseTotalsChart = (props: WarehouseTotalsChartProps) => {
@@ -17,7 +18,7 @@ const WarehouseTotalsChart = (props: WarehouseTotalsChartProps) => {
         backgroundColor: [
           colorsPortfolio.c_7,
           colorsPortfolio.c_8,
-          colorsPortfolio.c_9
+          colorsPortfolio.c_9,
         ],
       },
     ],
@@ -28,20 +29,26 @@ const WarehouseTotalsChart = (props: WarehouseTotalsChartProps) => {
     resizeDelay: 200,
     maintainAspectRatio: false,
     plugins: {
+      tooltip: {
+        enabled: false
+      },
       legend: {
         display: true,
         position: "bottom" as const,
         labels: {
           usePointStyle: true,
-          pointStyle: "rectRounded"
+          pointStyle: "rectRounded",
         },
         onClick: () => {},
         onHover: () => {},
-        onLeave: () => {}
+        onLeave: () => {},
       },
       title: {
         display: true,
         text: "Total shipments",
+      },
+      datalabels: {
+        formatter: (value: any) => convertNumToCommas(value),
       },
     },
   };

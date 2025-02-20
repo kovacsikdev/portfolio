@@ -42,6 +42,9 @@ const WarehouseReachedChart = (props: WarehouseReachedChartProps) => {
     resizeDelay: 200,
     maintainAspectRatio: false,
     plugins: {
+      tooltip: {
+        enabled: false
+      },
       legend: {
         display: true,
         position: "bottom" as const,

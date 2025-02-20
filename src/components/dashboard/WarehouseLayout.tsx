@@ -21,6 +21,16 @@ const WarehouseLayout = (props: WarehouseLayoutProps) => {
   return (
     <div style={{ width: "calc(100% - 16px)", border: `1px solid ${colorsPortfolio.gray_1}`, margin: "8px" }}>
       <svg viewBox="0 0 300 200" width="100%" height="100%">
+        <text
+          style={{ pointerEvents: "none" }}
+          x="2"
+          y="10"
+          fontSize={10}
+          fill="#fff"
+          stroke="none"
+        >
+          Warehouses map
+        </text>
         <g
           style={{ cursor: "pointer" }}
           id="block_a"

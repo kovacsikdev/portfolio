@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -19,6 +19,7 @@ import DashboardWrapper from "@/components/dashboard/DashboardWrapper";
 import { DevInfo } from "@/components";
 
 ChartJS.register(
+  ChartDataLabels,
   CategoryScale,
   LinearScale,
   BarElement,
@@ -29,6 +30,7 @@ ChartJS.register(
   Legend,
   Tooltip
 );
+// Chart.register(ChartDataLabels);
 
 ChartJS.defaults.color = "#fff";
 
