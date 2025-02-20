@@ -43,7 +43,7 @@ const WarehouseReachedChart = (props: WarehouseReachedChartProps) => {
     maintainAspectRatio: false,
     plugins: {
       tooltip: {
-        enabled: false
+        enabled: true
       },
       legend: {
         display: true,

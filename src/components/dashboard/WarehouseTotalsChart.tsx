@@ -30,7 +30,7 @@ const WarehouseTotalsChart = (props: WarehouseTotalsChartProps) => {
     maintainAspectRatio: false,
     plugins: {
       tooltip: {
-        enabled: false
+        enabled: true
       },
       legend: {
         display: true,
@@ -47,9 +47,9 @@ const WarehouseTotalsChart = (props: WarehouseTotalsChartProps) => {
         display: true,
         text: "Total shipments",
       },
-      datalabels: {
-        formatter: (value: any) => convertNumToCommas(value),
-      },
+      // datalabels: {
+      //   formatter: (value: any) => convertNumToCommas(value),
+      // },
     },
   };
 

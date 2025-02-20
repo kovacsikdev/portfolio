@@ -32,7 +32,7 @@ const WarehouseCostChart = (props: WarehouseCostChartProps) => {
     color: "white",
     plugins: {
       tooltip: {
-        enabled: false
+        enabled: true
       },
       legend: {
         display: false,
@@ -41,11 +41,11 @@ const WarehouseCostChart = (props: WarehouseCostChartProps) => {
         display: true,
         text: "Cost per shipment",
       },
-      datalabels: {
-        formatter: (value: any) => {
-          return `$${convertNumToCommas(value)}`;
-        },
-      },
+      // datalabels: {
+      //   formatter: (value: any) => {
+      //     return `$${convertNumToCommas(value)}`;
+      //   },
+      // },
     },
   };
 
