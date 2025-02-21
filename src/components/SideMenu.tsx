@@ -7,6 +7,7 @@ import HamburgerIcon from "../assets/hamburger-menu-icon.svg";
 import CloseIcon from "../assets/close-icon.svg";
 import ResumeIcon from "../assets/resume-icon.svg";
 import EmailIcon from "../assets/email-icon.svg";
+import GithubIcon from "../assets/github-mark-white.svg";
 
 import "./SideMenu.css";
 
@@ -55,7 +56,8 @@ export const SideMenu: React.FC = () => {
             </li>
           </ul>
           <ul>
-            <li><a  className="link-socials" href="/portfolio/Resume-Michael-Kovacsik.pdf" download={true}>Resume <Image src={ResumeIcon} alt="Resume Icon" /></a></li>
+            <li><a className="link-socials" href="/portfolio/Resume-Michael-Kovacsik.pdf" download={true}>Resume <Image src={ResumeIcon} alt="Resume Icon" /></a></li>
+            <li><Link className="link-socials" href="https://github.com/kovacsikdev/portfolio">Github <Image src={GithubIcon} alt="Github Icon" /></Link></li>
             <li><Link className="link-socials" href="mailto:kovacsikdev@gmail.com">kovacsikdev@gmail.com <Image src={EmailIcon} alt="Email Icon" /></Link></li>
           </ul>
         </div>

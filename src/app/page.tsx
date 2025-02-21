@@ -13,14 +13,13 @@ export default function Home() {
           <h1>Welcome</h1>
         </div>
         <div>
-          My name is Michael Kovacsik. This site is to showcase my Fullstack Web
-          Development skills
+          My name is Michael Kovacsik. Welcome to my web portal, where I showcase my Fullstack development skills
         </div>
         <div>
-          You can use the side menu to navigate different projects I built
+          You can navigate through the side menu to explore the various projects I have built
         </div>
         <div>
-          More projects being added soon
+          More projects will be added soon, so stay tuned!
         </div>
         <div className="flex justify-evenly">
           <Link
@@ -41,9 +40,6 @@ export default function Home() {
           >
             <img src="/portfolio/videos.png" alt="Videos icon" />
           </Link>
-        </div>
-        <div>
-          <a href="https://github.com/kovacsikdev/portfolio" target="_blank">Github <Image src={NewTabIcon} alt="new window" /></a>
         </div>
       </div>
     </div>

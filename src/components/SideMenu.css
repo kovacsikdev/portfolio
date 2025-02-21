@@ -75,3 +75,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.link-socials img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
