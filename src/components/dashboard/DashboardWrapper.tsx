@@ -172,13 +172,20 @@ const DashboardWrapper: React.FC = () => {
               </div>
             </div>
             <div className="col-span-6 row-span-1 md:col-span-3 row-span-2 lg:col-span-4 h-[500]">
-              <div className="flex w-full h-[45%]">
-                <WarehouseCostChart stats={statCostPerShipment} />
-                <WarehouseTotalsChart stats={statTotalPerShipment} />
+              <h2 className="font-semibold mb-2">Stats per shipment type</h2>
+              <div className="flex w-full h-[50%]">
+                <div className="w-[calc(50%-1rem)] border border-white rounded-lg p-2 m-2">
+                  <WarehouseCostChart stats={statCostPerShipment} />
+                </div>
+                <div className="w-[calc(50%-1rem)] border border-white rounded-lg p-2 m-2">
+                  <WarehouseTotalsChart stats={statTotalPerShipment} />
+                </div>
               </div>
-              <div className="w-full h-[45%]">
-                <h2 className="font-semibold m-2">Product reached on time</h2>
-                <WarehouseReachedChart stats={statReachedPerShipment} />
+              <div className="w-full h-[50%]">
+                <div className="border border-white rounded-lg p-2 m-2">
+                  <h2 className="font-semibold m-2">Product reached on time</h2>
+                  <WarehouseReachedChart stats={statReachedPerShipment} />
+                </div>
               </div>
             </div>
           </div>

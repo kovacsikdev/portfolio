@@ -19,12 +19,12 @@ const WarehouseLayout = (props: WarehouseLayoutProps) => {
   };
 
   return (
-    <div style={{ width: "calc(100% - 16px)", border: `1px solid ${colorsPortfolio.gray_1}`, margin: "8px" }}>
+    <div style={{ width: "calc(100% - 16px)", border: `1px solid ${colorsPortfolio.gray_1}`, borderRadius: "8px", margin: "8px" }}>
       <svg viewBox="0 0 300 200" width="100%" height="100%">
         <text
           style={{ pointerEvents: "none" }}
-          x="2"
-          y="10"
+          x="4"
+          y="12"
           fontSize={10}
           fill="#fff"
           stroke="none"

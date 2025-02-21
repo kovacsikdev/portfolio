@@ -54,7 +54,7 @@ const WarehouseTotalsChart = (props: WarehouseTotalsChartProps) => {
   };
 
   return (
-    <div style={{ width: "50%", height: "100%" }}>
+    <div style={{ width: "100%", height: "100%" }}>
       <Doughnut data={data} options={options} />
     </div>
   );
