@@ -41,6 +41,7 @@ export default function Home() {
             <img src="/portfolio/videos.png" alt="Videos icon" />
           </Link>
         </div>
+        <div><Link href="https://kovacsikdev.github.io/" target="_blank">Resume website <Image src={NewTabIcon} alt="New tab" /></Link></div>
       </div>
     </div>
   );
