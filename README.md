@@ -29,7 +29,7 @@ A map of 20 vehicles on the road showing their live location. Each bot streams t
 
 A dashboard displaying warehouse logistics.
 
-![Screenshot 2025-02-18 164207](https://github.com/user-attachments/assets/23ab50af-e29c-4b56-ad34-82fd58ae0369)
+![Screenshot 2025-02-21 100922](https://github.com/user-attachments/assets/c094d496-f71c-4ff1-b0b4-52c97eb35627)
 
 [https://kovacsikdev.github.io/portfolio/dashboard](https://kovacsikdev.github.io/portfolio/dashboard)
 
