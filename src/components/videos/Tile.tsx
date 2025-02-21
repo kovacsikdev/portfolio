@@ -42,7 +42,7 @@ const Tile = (props: TileProps) => {
   };
 
   return (
-    <div className="tile-wrapper m-3" ref={tileRef}>
+    <div id="Tile" className="tile-wrapper m-auto" ref={tileRef}>
       <div
         className={`tile-item flex justify-center items-center border border-gray-600 rounded-lg p-3`}
       >

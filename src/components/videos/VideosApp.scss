@@ -1,0 +1,46 @@
+#VideosApp {
+  position: relative;
+  width: 100%;
+  margin: 1rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .section-main {
+    max-width: 1680px;
+    margin: auto;
+  }
+
+  .section-video {
+    position: relative;
+    overflow: hidden;
+    height: 55vh;
+    margin: 5rem 0;
+
+    &-title {
+      font-size: 5rem;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+
+    &-button {
+      position: absolute;
+      left: 1.5rem;
+      bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+      background-color: black;
+      border: 2px solid white;
+      border-radius: 4px;
+      color: white;
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
