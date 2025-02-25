@@ -20,6 +20,15 @@
     height: 55vh;
     margin: 5rem 0;
 
+    img {
+    transition: all 1s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+    }
+
     &-title {
       font-size: 5rem;
       position: absolute;

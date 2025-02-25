@@ -102,7 +102,7 @@ const Video = (props: VideoProps) => {
                   }
                 >
                   <video
-                    className="video"
+                    className="m-auto"
                     src={item.videoSrc}
                     controls
                     autoPlay
