@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ShippingDataType } from "./types";
 import { convertNumToCommas } from "@/helpers/helpers";
+import { exportToCSV } from "@/helpers/csvExport"; // Import the helper function
 
 type WarehouseTableProps = {
   tableData: ShippingDataType[];
@@ -58,10 +59,15 @@ const WarehouseTable = (props: WarehouseTableProps) => {
     return sortConfig.direction === "ascending" ? "▲" : "▼";
   };
 
+  const downloadCSV = () => {
+    exportToCSV(data, "warehouse_data.csv");
+  };
+
   return (
     <>
       <div className="flex justify-between">
         <div>Items: {tableData.length}</div>
+        <button title="Download data into a csv file" onClick={downloadCSV} className="btn btn-primary">Download CSV</button>
       </div>
 
       <div className="warehouse-table">
