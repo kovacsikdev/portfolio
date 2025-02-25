@@ -22,51 +22,117 @@ const WarehouseFilter = (props: WarehouseFilterProps) => {
   return (
     <div className="flex w-full min-w-[150]">
       <div className="flex flex-col mx-2 w-full">
-        <label htmlFor="filter-importance" className="mr-2 font-bold">
-          Importance:
-        </label>
-        <select
-          id="filter-importance"
-          className="p-2 text-black border border-gray-300 rounded-lg w-full"
-          value={importanceFilter}
-          onChange={(e) => setImportanceFilter(e.target.value)}
-        >
-          <option value="">All</option>
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select>
+        <div>Importance</div>
+        <div className="flex flex-col">
+          <label className="relative inline-flex items-center cursor-pointer mb-2">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={importanceFilter === "high"}
+              onChange={() =>
+                setImportanceFilter(importanceFilter === "high" ? "" : "high")
+              }
+            />
+            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+            <span className="ml-3 text-sm font-medium">High</span>
+          </label>
+          <label className="relative inline-flex items-center cursor-pointer mb-2">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={importanceFilter === "medium"}
+              onChange={() =>
+                setImportanceFilter(
+                  importanceFilter === "medium" ? "" : "medium"
+                )
+              }
+            />
+            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+            <span className="ml-3 text-sm font-medium">Medium</span>
+          </label>
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={importanceFilter === "low"}
+              onChange={() =>
+                setImportanceFilter(importanceFilter === "low" ? "" : "low")
+              }
+            />
+            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+            <span className="ml-3 text-sm font-medium">Low</span>
+          </label>
+        </div>
       </div>
       <div className="flex flex-col mx-2 w-full">
-        <label htmlFor="filter-shipment" className="mr-2 font-bold">
-          Shipment:
-        </label>
-        <select
-          id="filter-shipment"
-          className="p-2 text-black border border-gray-300 rounded-lg w-full"
-          value={shipmentFilter}
-          onChange={(e) => setShipmentFilter(e.target.value)}
-        >
-          <option value="">All</option>
-          <option value="Flight">Flight</option>
-          <option value="Ship">Ship</option>
-          <option value="Road">Road</option>
-        </select>
+        <div>Shipment</div>
+        <div className="flex flex-col">
+          <label className="relative inline-flex items-center cursor-pointer mb-2">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={shipmentFilter === "Flight"}
+              onChange={() =>
+                setShipmentFilter(shipmentFilter === "Flight" ? "" : "Flight")
+              }
+            />
+            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+            <span className="ml-3 text-sm font-medium">Flight</span>
+          </label>
+          <label className="relative inline-flex items-center cursor-pointer mb-2">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={shipmentFilter === "Ship"}
+              onChange={() =>
+                setShipmentFilter(shipmentFilter === "Ship" ? "" : "Ship")
+              }
+            />
+            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+            <span className="ml-3 text-sm font-medium">Ship</span>
+          </label>
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={shipmentFilter === "Road"}
+              onChange={() =>
+                setShipmentFilter(shipmentFilter === "Road" ? "" : "Road")
+              }
+            />
+            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+            <span className="ml-3 text-sm font-medium">Road</span>
+          </label>
+        </div>
       </div>
       <div className="flex flex-col mx-2 w-full">
-        <label htmlFor="filter-reached" className="mr-2 font-bold">
-          On time:
-        </label>
-        <select
-          id="filter-reached"
-          className="p-2 text-black border border-gray-300 rounded-lg w-full"
-          value={reachedFilter}
-          onChange={(e) => setReachedFilter(Number(e.target.value))}
-        >
-          <option value="-1">All</option>
-          <option value="0">No</option>
-          <option value="1">Yes</option>
-        </select>
+      <div>On time</div>
+        <div className="flex flex-col">
+          <label className="relative inline-flex items-center cursor-pointer mb-2">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={reachedFilter === 0}
+              onChange={() =>
+                setReachedFilter(reachedFilter === 0 ? -1 : 0)
+              }
+            />
+            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+            <span className="ml-3 text-sm font-medium">No</span>
+          </label>
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={reachedFilter === 1}
+              onChange={() =>
+                setReachedFilter(reachedFilter === 1 ? -1 : 1)
+              }
+            />
+            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+            <span className="ml-3 text-sm font-medium">Yes</span>
+          </label>
+        </div>
       </div>
     </div>
   );
