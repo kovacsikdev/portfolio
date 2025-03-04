@@ -1,117 +1,104 @@
 "use client";
 
-import { useEffect, Dispatch, SetStateAction } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Tile from "./Tile";
 import CloseIcon from "../../assets/close-icon.svg";
 import { videoMap } from "./videoMap";
 
-import "./Video.scss";
-
 type VideoProps = {
-  id: keyof typeof videoMap;
-  toggleVideo: Dispatch<SetStateAction<boolean>>;
+  videoType: keyof typeof videoMap;
+  videoId: string;
 };
 
 type VideoItemType = {
   videoSrc: string;
   thumbnailUrl: string;
+  credit: string;
+  id: number;
 };
 
 const Video = (props: VideoProps) => {
-  const { id, toggleVideo } = props;
+  const [loading, setLoading] = useState(true);
+  const [videoSrc, setVideoSrc] = useState("");
 
-  const headerMap = {
-    nature: {
-      bg: "bg_nature",
-      stickyTitle: "Nature",
-      title: "Nature videos",
-      description: "A collection of nature videos. Provided by:",
-      providedByLink: "https://pixabay.com/videos/search/nature/",
-    },
-    space: {
-      bg: "bg_space",
-      stickyTitle: "Space",
-      title: "Space videos",
-      description: "A collection of space videos. Provided by:",
-      providedByLink: "https://pixabay.com/videos/search/space/",
-    },
+  const { videoType, videoId } = props;
+
+  if (!videoId) {
+    // if not id was provided, then redirect back to the videos section
+    window.location.href = "/portfolio/videos";
+  }
+
+  const getVideoById = () => {
+    // Could use a server request here to get the video by id, but for this mock portfolio, we'll just get it from the videoMap.
+    setLoading(true);
+
+    const videos = videoMap[videoType];
+    const videoNum = Number(videoId);
+    const videoFromId = videos.filter((vid: VideoItemType) => {
+      return vid.id === videoNum;
+    });
+
+    setVideoSrc(videoFromId[0].videoSrc);
+    setLoading(false);
+  };
+
+  const navBack = () => {
+    window.location.href = `/portfolio/videos/${videoType}`;
   };
 
   useEffect(() => {
-    window.scrollTo(0,0)
-  }, [])
+    getVideoById();
+  }, []);
 
   return (
     <div id="Video">
-      <div
-        className="video-overlay"
-        onClick={() => {
-          toggleVideo(false);
-        }}
-      ></div>
-      <div className="video-content">
-        <div className="video-sticky-content">
-          <div className="video-sticky-title">
-            <div className="video-sticky-title-text">
-              {headerMap[id as keyof typeof headerMap].stickyTitle}
+        {loading && (
+          <div>Loading...</div>
+        )}
+        {!loading && (
+          <>
+            <div className="page-title text-4xl">
+              <h2>Video</h2>
             </div>
-            <button
-              className="video-sticky-title-btn"
-              onClick={() => {
-                toggleVideo(false);
-              }}
-            >
-              <Image src={CloseIcon} alt="Close Icon" />
-            </button>
-          </div>
-        </div>
-        <div className="video-img-header">
-          <div className="video-img-bg">
-          <img
-            src={`/portfolio/${headerMap[id as keyof typeof headerMap].bg}.jpeg`}
-            loading="lazy"
-            alt="Nature background"
-          />
-          </div>
-          <div className="video-img-title">
-            {headerMap[id as keyof typeof headerMap].title}
-          </div>
-          <div className="video-img-description">
-            {headerMap[id as keyof typeof headerMap].description}{" "}
-            <a
-              href={`${headerMap[id as keyof typeof headerMap].providedByLink}`}
-            >
-              Pixabay
-            </a>
-          </div>
-        </div>
-        <div className="video-items">
-          {Array.isArray(videoMap[id]) &&
-            videoMap[id].map((item: VideoItemType, index) => {
-              return (
-                <Tile
-                  key={`video_${index}`}
-                  thumbnail={
-                    <Image
-                      src={item.thumbnailUrl}
-                      alt=""
-                      unoptimized
-                      fill={true}
-                    />
-                  }
-                >
-                  <video
-                    className="m-auto"
-                    src={item.videoSrc}
-                    controls
-                    autoPlay
-                  />
-                </Tile>
-              );
-            })}
-        </div>
-      </div>
+            <div className="w-full m-auto flex flex-col md:w-[70%]">
+              <div>
+                <button className="m-2 float-right" onClick={navBack}>
+                  <Image src={CloseIcon} alt="Close Icon" />
+                </button>
+              </div>
+              <video src={videoSrc} controls />
+              <div>
+                <div className="page-title text-4xl">
+                  <h2>Video Description in Lorem Ipsum</h2>
+                </div>
+                <div>
+                  <p className="mb-8">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Vivamus augue massa, scelerisque ac purus id, accumsan
+                    malesuada tellus. Ut molestie erat sit amet dui scelerisque,
+                    vel iaculis dolor lacinia. Phasellus sapien massa,
+                    condimentum id convallis at, lacinia nec justo. Quisque et
+                    ex vitae velit pulvinar ultricies vel cursus velit. Integer
+                    neque urna, aliquam consectetur auctor a, porttitor id nunc.
+                    Morbi imperdiet at lectus et facilisis. Morbi nisl elit,
+                    iaculis eget convallis id, cursus hendrerit urna.
+                  </p>
+                  <p className="mb-8">
+                    Morbi fringilla, metus nec pretium tempor, leo risus
+                    fringilla orci, at fermentum sapien nulla nec sapien.
+                    Suspendisse suscipit massa enim, nec facilisis sapien
+                    sollicitudin id. Phasellus pretium arcu sed lacus rhoncus
+                    luctus. Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Donec facilisis massa vel justo viverra finibus.
+                    Mauris porta porttitor dapibus. Quisque gravida ex sed
+                    finibus rhoncus. Nunc laoreet justo nulla, eu mollis ligula
+                    aliquet lobortis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
     </div>
   );
 };

@@ -21,12 +21,12 @@
     margin: 5rem 0;
 
     img {
-    transition: all 1s ease;
-    transform: scale(1);
+      transition: all 1s ease;
+      transform: scale(1);
 
-    &:hover {
-      transform: scale(1.2);
-    }
+      &:hover {
+        transform: scale(1.2);
+      }
     }
 
     &-title {
