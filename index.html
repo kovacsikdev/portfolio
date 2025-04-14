@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Kovacsik Portfolio</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      .container {
+        text-align: center;
+        width: 90%;
+        max-width: 600px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      .link-item {
+        margin: 20px 0;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: left;
+        background: #fafafa;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .link-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      }
+      .link-item img {
+        width: 100%;
+        max-height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .link-item h3 {
+        margin: 10px 0 5px;
+        font-size: 1.2em;
+        color: #333;
+      }
+      .link-item p {
+        margin: 0 0 10px;
+        font-size: 0.9em;
+        color: #666;
+      }
+      .link-item a {
+        display: inline-block;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+      .link-item a:hover {
+        text-decoration: underline;
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .overlay img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+      }
+      .overlay .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5em;
+        color: #fff;
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Michael Kovacsik's Projects</h2>
+      <p>A display of projects built by Michael Kovacsik using Fullstack technology</p>
+      <p>
+        <a href="mailto:kovacsikdev@gmail.com">kovacsikdev@gmail.com</a>
+        <a
+          href="https://www.linkedin.com/in/michael-kovacsik-46b30681/"
+          target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/kovacsikdev/">Github</a>
+      </p>
+      <div class="link-item">
+        <img
+          src="assets/layman-corporate.png"
+          alt="Layman to Corporate Screenshot"
+          onclick="showOverlay(this)"
+        />
+        <h3>Layman to Corporate</h3>
+        <p>Convert simple language into corporate jargon effortlessly.</p>
+        <p>Frontend: React, Typescript, Chakra UI</p>
+        <p>AI: ChatGPT</p>
+        <a href="https://kovacsikdev.github.io/layman-corporate" target="_blank"
+          >Visit Site</a
+        >
+      </div>
+      <div class="link-item">
+        <img
+          src="assets/text-chat.png"
+          alt="Text Chat Screenshot"
+          onclick="showOverlay(this)"
+        />
+        <h3>Text Chat</h3>
+        <p>A real-time chat application for seamless communication.</p>
+        <p>Frontend: React, Typescript, Material UI</p>
+        <p>Backend: Node.js, Websockets</p>
+        <a href="https://kovacsikdev.github.io/text-chat/" target="_blank">Visit Site</a>
+      </div>
+      <div class="link-item">
+        <img
+          src="assets/real-time-map.png"
+          alt="Real Time Map Screenshot"
+          onclick="showOverlay(this)"
+        />
+        <h3>Real Time Map</h3>
+        <p>A real-time map of 20 vehicle locations with their status and dashcam video.</p>
+        <p>Frontend: React, Typescript, custom CSS</p>
+        <p>Backend: Node.js, Websockets, Google Maps API</p>
+        <a href="https://kovacsikdev.github.io/real-time-map/" target="_blank">Visit Site</a>
+      </div>
+    </div>
+    <div class="overlay" id="imageOverlay">
+      <button class="close-btn" onclick="hideOverlay()">X</button>
+      <img src="" alt="Full Screen Image" id="overlayImage" />
+    </div>
+    <script>
+      function showOverlay(image) {
+        const overlay = document.getElementById("imageOverlay");
+        const overlayImage = document.getElementById("overlayImage");
+        overlayImage.src = image.src;
+        overlay.style.display = "flex";
+      }
+
+      function hideOverlay() {
+        const overlay = document.getElementById("imageOverlay");
+        overlay.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
