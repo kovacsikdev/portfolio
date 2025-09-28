@@ -94,7 +94,8 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <!-- Temporarily comment out container -->
+    <!-- <div class="container">
       <h2>Michael Kovacsik's Projects</h2>
       <p>Projects built by Michael Kovacsik using Fullstack technology</p>
       <p>
@@ -106,11 +107,6 @@
         >
         <a href="https://github.com/kovacsikdev?tab=repositories" target="_blank">Github</a>
       </p>
-      <!-- <p><a
-        href="/assets/Resume-Michael-Kovacsik.pdf"
-        download="Resume-Michael-Kovacsik"
-        >Download resume</a
-      ></p> -->
       <div class="link-item">
         <img
           src="assets/military-real-time-map.png"
@@ -198,36 +194,29 @@
         <p>Backend: Node.js, Websockets</p>
         <a href="https://kovacsikdev.github.io/text-chat/" target="_blank">Visit Site</a>
       </div>
-      <!-- <div class="link-item">
-        <img
-          src="assets/real-time-map.png"
-          alt="Real Time Map Screenshot"
-          onclick="showOverlay(this)"
-          loading="lazy"
-        />
-        <h3>Real Time Map</h3>
-        <p>A real-time map of 20 vehicle locations with their status and dashcam video.</p>
-        <p>Frontend: React, Typescript, Context (state management), CSS3, Google Maps API</p>
-        <p>Backend: Node.js, Websockets</p>
-        <a href="https://kovacsikdev.github.io/real-time-map/" target="_blank">Visit Site</a>
-      </div> -->
     </div>
     <div class="overlay" id="imageOverlay">
       <button class="close-btn" onclick="hideOverlay()">X</button>
       <img src="" alt="Full Screen Image" id="overlayImage" />
+    </div> -->
+    <div>
+      <h2>Redirecting to https://kovacsikdev.github.io/...</h2>
     </div>
     <script>
-      function showOverlay(image) {
-        const overlay = document.getElementById("imageOverlay");
-        const overlayImage = document.getElementById("overlayImage");
-        overlayImage.src = image.src;
-        overlay.style.display = "flex";
-      }
+      // function showOverlay(image) {
+      //   const overlay = document.getElementById("imageOverlay");
+      //   const overlayImage = document.getElementById("overlayImage");
+      //   overlayImage.src = image.src;
+      //   overlay.style.display = "flex";
+      // }
 
-      function hideOverlay() {
-        const overlay = document.getElementById("imageOverlay");
-        overlay.style.display = "none";
-      }
+      // function hideOverlay() {
+      //   const overlay = document.getElementById("imageOverlay");
+      //   overlay.style.display = "none";
+      // }
+      setTimeout(() => {
+        window.location = "https://kovacsikdev.github.io/"
+      }, 2000)
     </script>
   </body>
 </html>
